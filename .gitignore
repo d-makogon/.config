@@ -1,4 +1,6 @@
 *
-!kitty
-!/kitty
-!.gitignore
+!kitty/
+!kitty/**
+
+!fish
+!fish/**
