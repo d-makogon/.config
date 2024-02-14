@@ -1,43 +1,36 @@
-function fish_prompt --description 'Write out the prompt'
-    set -l last_status $status
+function fish_prompt
+    # alfa@nobby:/path/to/dir$ 
 
-    # if set -q VIRTUAL_ENV
-    #   echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
-    # end
+    set -l symbol '$ '
+    set -l cwd_color $fish_color_cwd
+    set -l user_color $fish_color_user
+    set -l hostname_color $fish_color_user
+    set -l at_color $fish_color_normal
+    set -l pwd_color $fish_color_cwd
+    set -l colon_color $fish_color_command
+    set -l dollar_color $fish_color_normal
 
-    if not set -q __fish_prompt_normal
-        set -g __fish_prompt_normal (set_color normal)
+    if fish_is_root_user
+        set symbol ' # '
+        set -q fish_color_cwd_root
+        and set cwd_color $fish_color_cwd_root
     end
 
-    # PWD
-    set_color $fish_color_cwd
-    # echo -n (prompt_pwd)
-    if not test $PWD = $HOME
-        echo -n (basename $PWD)' '
-    end
+    set_color $user_color
+    echo -n $USER
+
+    set_color $at_color
+    echo -n @
+
+    set_color $hostname_color
+    echo -n (prompt_hostname)
+
+    set_color $colon_color
+    echo -n :
+
+    set_color $pwd_color
+    echo -n (prompt_pwd)
+
     set_color normal
-
-    # printf '%s ' (__fish_git_prompt)
-    if in-git-dir
-        set stashes (git stash list | line-count)
-        if test $stashes -gt 0
-            printf '%s ' $stashes
-        end
-    end
-
-    if not test $last_status -eq 0
-        set_color $fish_color_error
-    end
-
-    if jobs -q
-        echo -s -n (set_color -b purple) '.' (set_color normal)
-    end
-
-    if set -q VIRTUAL_ENV
-        echo -s -n (set_color -b blue) '$' (set_color normal)
-    else
-        echo -s -n '$'
-    end
-    echo -n ' '
-    set_color normal
+    echo -n $symbol
 end
