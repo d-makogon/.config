@@ -1,9 +1,10 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: Cartograph CF Nerd Font, monospace;
-    font-weight: bold;
+    /* font-family: Cartograph CF Nerd Font, monospace, "Font Awesome 6 Free"; */
+    font-family: Ubuntu, "Font Awesome 6 Free", "FontAwesome";
     font-size: 14px;
+    font-weight: bold;
     min-height: 0;
 }
 
