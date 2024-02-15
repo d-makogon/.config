@@ -81,7 +81,8 @@
         "format": "{}",
         "interval": 30,
         "exec": "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type": "json"
+        "return-type": "json",
+        "on-click": "gio open 'https://yandex.ru/pogoda/?lat=54.85194016&lon=83.10189056'"
     },
     "tray": {
         "icon-size": 17,
