@@ -4,3 +4,9 @@
 
 !fish
 !fish/**
+
+!waybar
+!waybar/**
+
+!hypr
+!hypr/**
