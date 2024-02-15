@@ -10,7 +10,7 @@
     "modules-left": [
         "clock",
         "custom/weather",
-        "hyprland/workspaces",
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "hyprland/window"
@@ -53,16 +53,6 @@
         "keyboard-name": "keychron-keychron-k3",
         "on-click": "hyprctl switchxkblayout keychron-keychron-k3 next"
     },
-    // "custom/spotify": {
-    //     "interval": 5,
-    //     "format": "{}",
-    //     "return-type": "json",
-    //     "exec": "~/.config/waybar/scripts/spotify.sh",
-    //     "exec-if": "pgrep spotify",
-    //     "on-click": "playerctl play-pause",
-    //     "on-scroll-up": "playerctl next",
-    //     "on-scroll-down": "playerctl previous"
-    // },
     "custom/spotify": {
         "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
         "format": "{}",
