@@ -1,3 +1,4 @@
-function igrep --wraps='grep -i' --wraps=grep --description 'case insensitive grep'
-command grep -i $argv
+function igrep --wraps='grep -i' --wraps=grep --wraps='grep -i --color' --description 'alias igrep=grep -i --color'
+  grep -i --color $argv
+        
 end
