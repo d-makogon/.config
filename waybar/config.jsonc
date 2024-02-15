@@ -10,11 +10,15 @@
         "clock",
         "custom/weather",
         "hyprland/workspaces",
-        "hyprland/language"
     ],
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+        "hyprland/window"
+    ],
     "modules-right": [
+        "custom/spotify",
         "tray",
+        "group/hardware",
+        "hyprland/language",
         "custom/updates",
         "pulseaudio",
         "pulseaudio#microphone"
@@ -24,32 +28,72 @@
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
-        // "show-special": true,
-        // "all-outputs": true,
         "on-click": "activate",
         "persistent-workspaces": {
-            "1": ["DP-1"],
-            "2": ["DP-3"],
-            "3": ["DP-3"],
-            "minimized": ["DP-3"]
+            "1": [
+                "DP-1"
+            ],
+            "2": [
+                "DP-3"
+            ],
+            "3": [
+                "DP-3"
+            ],
+            "minimized": [
+                "DP-3"
+            ]
             // "*": 5
         }
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "🇺🇸",
+        "format-ru": "🇷🇺",
+        "keyboard-name": "keychron-keychron-k3",
+        "on-click": "hyprctl switchxkblayout keychron-keychron-k3 next"
+    },
+    "custom/spotify": {
+        "interval": 5,
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
     },
     "custom/updates": {
         "exec": "apt-get -q -y --ignore-hold --allow-change-held-packages --allow-unauthenticated -s dist-upgrade | /bin/grep  ^Inst | wc -l",
         "interval": 14400000,
-        "format": "\uf6d9 {}"
+        "format": "\uf021 {}"
     },
-   "custom/weather" : {
-        "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 30,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
     },
     "tray": {
         "icon-size": 17,
         "spacing": 10
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory"
+        ]
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "{}%  ",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 5,
+        "format": "{}%  ",
+        "max-length": 10
     },
     "clock": {
         "format": "{:\uf017 %R  \uf073 %d/%m/%Y}",
@@ -69,7 +113,11 @@
             "phone": "\uf095",
             "portable": "\uf095",
             "car": "\uf1b9",
-            "default": ["\uf026", "\uf027", "\uf028"]
+            "default": [
+                "\uf026",
+                "\uf027",
+                "\uf028"
+            ]
         }
     },
     "pulseaudio#microphone": {
