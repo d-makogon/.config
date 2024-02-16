@@ -7,6 +7,7 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 0,
+    "margin": "0 10",
     "modules-left": [
         "clock",
         "custom/weather",
@@ -58,6 +59,9 @@
         "format": "{}",
         "return-type": "json",
         "on-click": "playerctl --player=spotify play-pause",
+        // NOTE: If right click stops working, check that pgrep correctly identifies the Spotify process and
+        // that hyprctl command works. I only got it to work with the pid window filter.
+        "on-click-right": "hyprctl dispatch movetoworkspace \"r+0,pid:$(pgrep -fx '/usr/share/spotify/spotify --enable-features=UseOzonePlatform --ozone-platform=wayland')\"",
         "on-scroll-up": "playerctl --player=spotify next",
         "on-scroll-down": "playerctl --player=spotify previous"
     },
@@ -97,7 +101,8 @@
     },
     "clock": {
         "format": "{:\uf017 %R  \uf073 %d/%m/%Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<big>{:%Y %B}</big>    <tt><small>{calendar}</small></tt>",
+        "on-click": "gnome-calendar"
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
