@@ -7,7 +7,7 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 0,
-    "margin": "0 10",
+    "margin": "0 10 0 10",
     "modules-left": [
         "clock",
         "custom/weather",
@@ -34,7 +34,6 @@
             "code": "",
             "term": "",
             "urgent": "",
-            // "active": "",
             "default": ""
         },
         "disable-scroll": true,
@@ -108,8 +107,8 @@
         "max-length": 10
     },
     "clock": {
-        "format": "{: %R   %d.%m.%Y}",
-        "tooltip-format": "<big>{:%Y %B}</big>    <tt><small>{calendar}</small></tt>",
+        "format": "{: %R     %d.%m.%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big><tt><small>{calendar}</small></tt>",
         "on-click": "gnome-calendar"
     },
     "pulseaudio": {
