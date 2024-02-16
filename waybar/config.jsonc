@@ -29,6 +29,14 @@
         "format": "{}"
     },
     "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "code": "",
+            "term": "",
+            "urgent": "",
+            // "active": "",
+            "default": ""
+        },
         "disable-scroll": true,
         "on-click": "activate",
         "persistent-workspaces": {
@@ -68,7 +76,7 @@
     "custom/updates": {
         "exec": "apt-get -q -y --ignore-hold --allow-change-held-packages --allow-unauthenticated -s dist-upgrade | /bin/grep  ^Inst | wc -l",
         "interval": 14400000,
-        "format": "\uf021 {}"
+        "format": " {}"
     },
     "custom/weather": {
         "tooltip": true,
@@ -100,35 +108,35 @@
         "max-length": 10
     },
     "clock": {
-        "format": "{:\uf017 %R  \uf073 %d/%m/%Y}",
+        "format": "{: %R   %d/%m/%Y}",
         "tooltip-format": "<big>{:%Y %B}</big>    <tt><small>{calendar}</small></tt>",
         "on-click": "gnome-calendar"
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
-        "format-muted": "\uf026 Muted",
+        "format-muted": " Muted",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "\uf58f",
-            "hands-free": "\uf58f",
-            "headset": "\uf58f",
-            "phone": "\uf095",
-            "portable": "\uf095",
-            "car": "\uf1b9",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
             "default": [
-                "\uf026",
-                "\uf027",
-                "\uf028"
+                "",
+                "",
+                ""
             ]
         }
     },
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": "\uf130 {volume}%",
-        "format-source-muted": "\uf131 Muted",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
