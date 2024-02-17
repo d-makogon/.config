@@ -54,6 +54,7 @@ tooltip {
 #custom-language,
 #custom-updates,
 #custom-spotify,
+#custom-spotify-not-launched,
 #custom-caffeine,
 #custom-weather,
 #window,
@@ -72,23 +73,28 @@ tooltip {
     margin: 3px 0px;
     margin-top: 10px;
     border: 1px solid #181825;
+    border-radius: 10px;
 }
 
-#custom-spotify {
-    margin-right: 10px;
-}
-
-#custom-spotify {
+#custom-spotify,
+#custom-spotify-not-launched {
     color: #75e69c;
+    margin-right: 10px;
+    border-radius: 10px;
 }
 
 #cpu {
     border-left: 0px;
     border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 #memory {
     border-left: 0px;
+    margin-right: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 #tray {
@@ -121,6 +127,7 @@ tooltip {
     color: #f5c2e7;
     border-left: 0px;
     border-right: 0px;
+    border-radius: 0px;
 }
 
 #window {
@@ -153,12 +160,15 @@ tooltip {
     color: #89b4fa;
     border-left: 0px;
     border-right: 0px;
+    border-radius: 0px;
 }
 
 #pulseaudio.microphone {
     color: #cba6f7;
     border-left: 0px;
     border-right: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #battery {

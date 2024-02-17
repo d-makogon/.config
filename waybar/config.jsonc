@@ -18,6 +18,7 @@
     ],
     "modules-right": [
         "custom/spotify",
+        "custom/spotify-not-launched",
         "tray",
         "group/hardware",
         "hyprland/language",
@@ -37,7 +38,7 @@
             "default": ""
         },
         "disable-scroll": true,
-        "on-click": "activate",
+        // "on-click": "activate",
         "persistent-workspaces": {
             "1": [
                 "DP-1"
@@ -60,6 +61,13 @@
         "format-ru": "🇷🇺",
         "keyboard-name": "keychron-keychron-k3",
         "on-click": "hyprctl switchxkblayout keychron-keychron-k3 next"
+    },
+    "custom/spotify-not-launched": {
+        "format": "{}",
+        "exec": "echo ",
+        "on-click": "spotify",
+        "exec-if": "! pgrep spotify",
+        "interval": 1
     },
     "custom/spotify": {
         "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
@@ -115,6 +123,7 @@
         "format": "{icon}  {volume}%",
         "format-muted": " Muted",
         "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
         "scroll-step": 5,
